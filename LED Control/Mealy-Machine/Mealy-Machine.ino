@@ -67,16 +67,19 @@ void light_state_machine(uint8_t input_event)
      {
       case OFF:
       {
-        curr_state = light_OFF;
         led_bright = PWM_OFF;
         change_light_brightness(led_bright);
+        curr_state = light_OFF;
         break; 
       }
       case ON:
       {
-        curr_state = light_DIM;
+        /*
+         * Run the exit action or transition action based on the current state and the input event. (Event = ON, curr_state = light_OFF so we should Dim the LED before/while transition)
+         */
         led_bright = PWM_DIM;
         change_light_brightness(led_bright);
+        curr_state = light_DIM;
         break;
       }
      }
@@ -88,16 +91,16 @@ void light_state_machine(uint8_t input_event)
      {
       case OFF:
       {
-        curr_state = light_OFF;
         led_bright = PWM_OFF;
         change_light_brightness(led_bright);
+        curr_state = light_OFF;
         break; 
       }
       case ON:
       {
-        curr_state = light_MED;
         led_bright = PWM_MED;
         change_light_brightness(led_bright);
+        curr_state = light_MED;
         break;
       }
      }
@@ -109,16 +112,16 @@ void light_state_machine(uint8_t input_event)
      {
       case OFF:
       {
-        curr_state = light_OFF;
         led_bright = PWM_OFF;
         change_light_brightness(led_bright);
+        curr_state = light_OFF;
         break; 
       }
       case ON:
       {
-        curr_state = light_FULL;
         led_bright = PWM_FULL;
         change_light_brightness(led_bright);
+        curr_state = light_FULL;
         break;
       }
      }
@@ -130,16 +133,16 @@ void light_state_machine(uint8_t input_event)
      {
       case OFF:
       {
-        curr_state = light_OFF;
         led_bright = PWM_OFF;
         change_light_brightness(led_bright);
+        curr_state = light_OFF;
         break; 
       }
       case ON:
       {
-        curr_state = light_DIM;
         led_bright = PWM_DIM;
         change_light_brightness(led_bright);
+        curr_state = light_DIM;
         break;
       }
      }
