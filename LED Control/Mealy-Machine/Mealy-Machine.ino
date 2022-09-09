@@ -1,3 +1,6 @@
+/*
+ * In meaaly machine, the actions are taken while exiting the state. 
+ */
 typedef enum{
   OFF,
   ON
